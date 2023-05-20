@@ -18,6 +18,7 @@
     Create a variable for each of the above steps of the Software Development Lifecycle and set the values of each variable to a definition of the step.
     The first one is done for you. 
 */
+
 const planning = "This is the first step, in which the end goal of the software is determined and defined. Developers typically will see what systems are already in place, and determine what features will need to be added."
 const analysisOfRequirements = "This is the second step, in which the user expectations for the software are determined. Developers plan out the project and document the process from start to finish."
 const design = "This is the third step, in which the user requirements are transformed into a tangible idea. Developers plan out what the software is going to look like and what its main features are."
