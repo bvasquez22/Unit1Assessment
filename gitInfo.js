@@ -25,7 +25,7 @@ const gitHubDefinition = "GitHub is an website where local repositories can be u
     It should be a string containing your best definition of what 'git init' does.
 */
 
-const gitDefinition = "The command 'git init' creates a local repository in the current directory of the user."
+const gitInitDefinition = "The command 'git init' creates a local repository in the current directory of the user."
 
 //////////////////PROBLEM 4////////////////////
 /*

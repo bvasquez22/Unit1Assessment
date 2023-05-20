@@ -49,11 +49,24 @@ const pinkPrice = .55
     Log `totalAcres` to the console.
 */
 
-// CODE HERE
+let totalAcres = 0
 
+for (let i = 0; i < 7; i++) {
+    totalAcres += fujiAcres[i];
+    totalAcres += galaAcres[i];
+    totalAcres += pinkAcres[i];
+}
+console.log(totalAcres)
 
+/*
+    Since each array has a length of 7, I know that the last element is #6, 
+    meaning that 'i' needs to be less than 7.
 
+    When 'i' = 0, we are referring to the first element of the array,
+    so we can add each element of the array to the variable 'totalAcres'.
 
+    As we loop through each 'i', we add the elements of the arrays to 'totalAcres'.
+*/
 
 // PROBLEM 2
 
@@ -67,11 +80,14 @@ const pinkPrice = .55
     Log `averageDailyAcres` to the console.
 */
 
-// CODE HERE
+let averageDailyAcres = totalAcres / 7
+console.log(averageDailyAcres)
 
-
-
-
+/*
+    We know there are 7 days in a week (7 elements in each array),
+    so by dividing the total acres picked by the total number of days
+    gives us the avg. number of acres picked in a day.
+*/
 
 // PROBLEM 3
 
@@ -105,9 +121,18 @@ const pinkPrice = .55
 let acresLeft = 174 
 let days = 0
 
-// CODE HERE
+while (acresLeft > 0) {
+    acresLeft -= averageDailyAcres
+    days += 1
+}
 
+console.log(days)
 
+/*
+    Not a ton to explain here... I just subtracted the avg. number of acres picked
+    in a day from the var 'acresLeft' and then made sure that each time I did
+    that, I added a counter to the var 'days'. 
+*/
 
 // PROBLEM 4
 
@@ -133,16 +158,26 @@ let days = 0
     values to the new arrays.
 */
 
-// CODE HERE
+let fujiTons = []
+let galaTons = []
+let pinkTons = []
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+for (let i = 0; i < 7; i++) {
+    fujiTons.push(fujiAcres[i] * 6.5);
+    galaTons.push(galaAcres[i] * 6.5);
+    pinkTons.push(pinkAcres[i] * 6.5);
+}
 
+console.log(fujiTons)
+console.log(galaTons)
+console.log(pinkTons)
 
-
-
-
+/*
+    As the instructions mentioned, there are a few ways to do this,
+    but I felt it was simpler to create 3 empty arrays and run
+    a for loop that used '.push()' to add 6.5 times the number of
+    acres picked to the new arrays.
+*/
 
 // PROBLEM 5
 
@@ -160,16 +195,26 @@ let days = 0
     Hint: there are 2000 pounds in a ton.
 */
 
-// CODE HERE 
+let fujiPounds = 0
+let galaPounds = 0
+let pinkPounds = 0
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+for (let i = 0; i < 7; i++) {
+    fujiPounds += fujiTons[i] * 2000;
+    galaPounds += galaTons[i] * 2000;
+    pinkPounds += pinkTons[i] * 2000;
+}
 
+console.log(fujiPounds)
+console.log(galaPounds)
+console.log(pinkPounds)
 
-
-
-
+/*
+    I kind of just repurposed my for loop from problem 1 here.
+    I just have a for loop going through each array for the tons of apples picked
+    and converting that value to pounds and then adding it to var
+    tracking total pounds of that apple picked.
+*/
 
 // PROBLEM 6
 
@@ -187,16 +232,23 @@ let days = 0
     console. 
 */
 
-// CODE HERE
+let fujiProfit = fujiPounds * fujiPrice
+let galaProfit = galaPounds * galaPrice
+let pinkProfit = pinkPounds * pinkPrice
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
+console.log("$" + fujiProfit)
+console.log("$" + galaProfit)
+console.log("$" + pinkProfit)
 
+/*
+    We already have all the vars and cons needed,
+    so I set set the new vars equal to the pounds
+    multiplied by the price.
 
-
-
-
+    Of course, since it is a price, I went ahead and made
+    sure to add a dollar sign before logging each profit to
+    the console.
+*/
 
 // PROBLEM 7
 
@@ -208,4 +260,16 @@ let days = 0
     Log `totalProfit` to the console.
 */
 
-// CODE HERE
+let totalProfit = fujiProfit + galaProfit + pinkProfit
+console.log("$" + totalProfit)
+
+/*
+    Just like problem 6, we already have all the vars we need,
+    so all that's left is to set 'totalProfit' equal to the sum
+    of each of the profit vars.
+
+    Also like above, since this a monetary value, I made sure to
+    add a dollar sign when logging the value to the console.
+
+    This was fun!
+*/
